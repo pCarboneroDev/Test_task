@@ -54,12 +54,6 @@ class GtfsDatasource(
             .filter { it.stopId == targetStopId && tripIds.contains((it.tripId)) }.toList()
     }
 
-    fun getRoute(routeId: Int): Route {
-        return csvReader.get().parse(source.open("routes.txt").reader())
-            .drop(1)
-            .map { Route.fromList(it.toList()) }.first { it.routeId == routeId }
-    }
-
     fun getAllRoutes(): List<Route> {
         return csvReader.get().parse(source.open("routes.txt").reader())
             .drop(1)

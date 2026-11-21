@@ -21,10 +21,6 @@ class DepartureRepositoryImpl(
         return datasource.getTripsByServiceIds(serviceIds)
     }
 
-    override suspend fun getRouteById(routeId: Int): Route {
-        return datasource.getRoute(routeId)
-    }
-
     override suspend fun getFilteredStopTimes(targetStopId: Int, tripIds: List<String>): List<StopTime> {
         return datasource.getFilteredStopTimes(targetStopId, tripIds)
     }
