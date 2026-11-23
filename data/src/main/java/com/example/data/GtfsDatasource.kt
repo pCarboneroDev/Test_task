@@ -13,7 +13,6 @@ import org.apache.commons.csv.CSVFormat
 class GtfsDatasource(
     private val source: GtfsFileSource
 ) {
-    //    private val reader = csvReader()
     private val csvReader = CSVFormat.Builder.create(CSVFormat.DEFAULT)
 
     fun getAllCalendars(): List<Calendar> {

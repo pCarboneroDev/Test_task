@@ -2,7 +2,6 @@ package com.example.domain.usecases
 
 import com.example.domain.entities.Calendar
 import com.example.domain.entities.CalendarDate
-import com.example.domain.entities.Departure
 import com.example.domain.entities.Route
 import com.example.domain.entities.StopTime
 import com.example.domain.entities.Trip
@@ -10,11 +9,9 @@ import com.example.domain.entities.params.NextThreeDeparturesParams
 import com.example.domain.repositories.DepartureRepository
 import io.mockk.coEvery
 import io.mockk.mockk
-import junit.framework.TestCase.assertEquals
 import kotlinx.coroutines.test.runTest
 import org.junit.Assert.assertTrue
 import org.junit.Test
-import java.time.LocalDate
 import java.time.LocalDate.parse
 import java.time.LocalTime
 import java.time.format.DateTimeFormatter
@@ -32,7 +29,7 @@ class GetNextThreeDeparturesUseCaseTest {
         )
     )
 
-    private val calendars = listOf<Calendar>(
+    private val calendars = listOf(
         Calendar(
             serviceId = "service1",
             monday = true,
@@ -47,7 +44,7 @@ class GetNextThreeDeparturesUseCaseTest {
         )
     )
 
-    private val trips = listOf<Trip>(
+    private val trips = listOf(
         Trip(
             tripId = "trip1",
             routeId = 1,
@@ -89,7 +86,6 @@ class GetNextThreeDeparturesUseCaseTest {
         )
 
         val result = useCase.call(params)
-
 
         assertTrue(result.isEmpty())
     }

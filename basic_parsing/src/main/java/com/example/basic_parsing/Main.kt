@@ -12,10 +12,6 @@ import java.time.LocalDate
 import java.time.LocalTime
 import java.time.temporal.ChronoUnit
 
-//    val directory = File(
-//        """C:\Users\Propietario\Documents\ProyectosApps\Test_task\data\src\main\java\com\example\data\bilbobus"""
-//    )
-
 suspend fun main(args: Array<String>) {
     try {
         if(args.isEmpty()){
@@ -53,7 +49,6 @@ fun generateMarkdown(
 ): String {
 
     return buildString {
-
         appendLine("# Next departures")
         appendLine()
         appendLine("**Target Stop:** $stopName")

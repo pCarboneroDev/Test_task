@@ -49,7 +49,6 @@ class GetNextThreeDeparturesUseCase(
         val departures = stopTimeList.map { stopTime ->
             val trip = availableTrips.first { it.tripId == stopTime.tripId }
             val route = routes.first { trip.routeId == it.routeId }
-            //val route = repo.getRouteById(trip.routeId)
 
             Departure(
                 departureTime = stopTime.departureTime,
