@@ -4,7 +4,7 @@ The repository root directory contains the executable JAR file:
 
 `basic_parsing.jar`
 
-To run the application, open a terminal in the repository's root directory and execute the following command:
+To run the .jar application, execute it in a terminal with an argument for the path o the dataset
 
 ```bash
 java -jar basic_parsing.jar "path"
